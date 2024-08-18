@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose Pires - Salão de Beleza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background: linear-gradient(135deg, #ff69b4, #8a2be2);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        header nav ul li {
+            margin-left: 20px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .descricao {
+            margin-bottom: 30px;
+        }
+        .imagens-produto {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .imagens-produto img {
+            width: 400px;
+            border-radius: 8px;
+            height: auto;
+        }
+        .equipe {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ff99cc, #b3b3ff);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .equipe .membro {
+            text-align: center;
+            margin: 10px;
+            flex: 1;
+            max-width: 200px;
+        }
+        .equipe img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .formulario-contato, .formulario-inscricao {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .formulario-contato input, .formulario-contato textarea,
+        .formulario-inscricao input, .formulario-inscricao select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .formulario-contato input, .formulario-inscricao input {
+            height: 40px;
+        }
+        .formulario-contato textarea {
+            height: 100px;
+        }
+        .formulario-inscricao select {
+            height: 40px;
+        }
+        .formulario-contato button, .formulario-inscricao button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .formulario-contato button:hover, .formulario-inscricao button:hover {
+            background-color: #ff1493;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        footer {
+            background: #f8f9f9;
+            padding: 10px 0;
+            text-align: center;
+            border-top: 2px solid #e1e1e1;
+        }
+        footer p {
+            margin: 0;
+            color: #666;
+        }
+        #servicos {
+            text-align: center;
+        }
+        #servicos ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+        #servicos ul li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Rose Pires - Salão de Beleza</h1>
+    <p>Transformando sua beleza, realçando sua confiança.</p>
+    <nav>
+        <ul>
+            <li><a href="#descricao">Sobre Nós</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#" id="inscricaoLink">Inscreva-se</a></li>
+            <li><a href="#" id="contactLink">Entre em Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <section id="descricao" class="descricao">
+        <h2>Sobre Nós</h2>
+        <p>No Salão de Beleza Rose Pires, oferecemos uma experiência única de cuidados com a beleza. Nosso objetivo é proporcionar aos nossos clientes os melhores serviços em um ambiente acolhedor e sofisticado.</p>
+    </section>
+
+    <section id="imagens-produto" class="imagens-produto">
+        <img src="https://via.placeholder.com/400" alt="Imagem do Salão">
+        <img src="https://via.placeholder.com/400" alt="Imagem de um Tratamento">
+        <img src="https://as1.ftcdn.net/v2/jpg/04/04/87/40/1000_F_404874032_xt54JMAUaLoyR7qj02mjRpGdXjUcISO6.jpg" alt="Imagem Adicional 1">
+        <img src="https://plus.unsplash.com/premium_photo-1661290231745-15f1ed6fea88?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem Adicional 2">
+    </section>
+
+    <section id="equipe" class="equipe">
+        <h2>Conheça Nossa Equipe</h2>
+        <div class="membro">
+            <img src="https://img.freepik.com/fotos-gratis/retrato-de-uma-linda-mulher-sorridente-tocando-seu-rosto-com-maquiagem-natural-e-parecendo-alegre-a-frente-em-pe-contra-uma-parede-branca_176420-38914.jpg?w=996&t=st=1724011728~exp=1724012328~hmac=d2f7a8cf83089d120b89b52c761001f29c4ef8567693464ac38363a0b78bbacd" alt="Rose Pires">
+            <h3>Rose Pires</h3>
+            <p>Fundadora & Especialista em Beleza</p>
+        </div>
+        <div class="membro">
+            <img src="https://img.freepik.com/fotos-gratis/retrato-de-uma-jovem-linda-modelo-de-pe-e-sorrindo-para-a-camera-foto-de-alta-qualidade_144627-75055.jpg?w=360&t=st=1724011671~exp=1724012271~hmac=88928df395357c401a958f2baef22f72ecb1554187215f5409fa1682bf3cd5f" alt="João Silva">
+            <h3>João Silva</h3>
+            <p>Estilista</p>
+        </div>
+        <div class="membro">
+            <img src="https://img.freepik.com/fotos-gratis/mulher-de-negocios-elegante-e-confiante-sorrindo_176420-19466.jpg?w=996&t=st=1724011583~exp=1724012183~hmac=1b8eb8082aab7d9e7c5f36f4fd08dcff7684a40a05a5d538e734d9551786264a" alt="Maria Oliveira">
+            <h3>Maria Oliveira</h3>
+            <p>Manicure</p>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+        <ul>
+            <li>Coloração</li>
+            <li>Tratamento de Pele</li>
+            <li>Manicure e Pedicure</li>
+            <li>Corte de Cabelo</li>
+            <li>Maquiagem</li>
+        </ul>
+    </section>
+</div>
+
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="contactClose">&times;</span>
+        <h2>Entre em Contato</h2>
+        <div class="formulario-contato">
+            <form action="mailto:contato@rosepires.com.br" method="post" enctype="text/plain">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="inscricaoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="inscricaoClose">&times;</span>
+        <h2>Inscreva-se</h2>
+        <div class="formulario-inscricao">
+            <form action="mailto:inscricao@rosepires.com.br" method="post" enctype="text/plain">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <select name="estado" required>
+                    <option value="">Selecione o Estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Rose Pires - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    var contactModal = document.getElementById("contactModal");
+    var inscricaoModal = document.getElementById("inscricaoModal");
+    var contactLink = document.getElementById("contactLink");
+    var inscricaoLink = document.getElementById("inscricaoLink");
+    var contactClose = document.getElementById("contactClose");
+    var inscricaoClose = document.getElementById("inscricaoClose");
+
+    contactLink.onclick = function() {
+        contactModal.style.display = "block";
+    }
+    inscricaoLink.onclick = function() {
+        inscricaoModal.style.display = "block";
+    }
+
+    contactClose.onclick = function() {
+        contactModal.style.display = "none";
+    }
+    inscricaoClose.onclick = function() {
+        inscricaoModal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == contactModal) {
+            contactModal.style.display = "none";
+        }
+        if (event.target == inscricaoModal) {
+            inscricaoModal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
